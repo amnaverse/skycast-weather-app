@@ -26,8 +26,7 @@
 }
 
 .app__eyebrow {
-  /* font-family: 'Space Grotesk', sans-serif; */
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-weight: 700;
   font-style: normal;
   letter-spacing: 0.02em;
@@ -156,6 +155,10 @@
   gap: 12px;
 }
 
+.card__hero svg {
+  flex-shrink: 0;
+}
+
 .card__temp {
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 700;
@@ -249,11 +252,84 @@
   opacity: 0.55;
 }
 
-@media (max-width: 420px) {
-  .card__temp {
-    font-size: 60px;
+/* ---- Tablets & large phones ---- */
+@media (max-width: 480px) {
+  .app {
+    padding: 32px 16px;
   }
+
+  .card {
+    padding: 24px 20px;
+    border-radius: 22px;
+  }
+
+  .card__temp {
+    font-size: 56px;
+  }
+
+  .card__grid {
+    gap: 10px;
+  }
+}
+
+/* ---- Small phones (iPhone SE, older/compact Android) ---- */
+@media (max-width: 360px) {
+  .app {
+    padding: 24px 12px;
+  }
+
+  .app__eyebrow {
+    font-size: 24px;
+  }
+
+  .card {
+    padding: 20px 16px;
+  }
+
+  .card__hero {
+    gap: 8px;
+  }
+
+  .card__hero svg {
+    width: 64px !important;
+    height: 64px !important;
+  }
+
+  .card__temp {
+    font-size: 44px;
+  }
+
+  .card__place h1 {
+    font-size: 20px;
+  }
+
+  .card__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .stat {
+    padding: 8px 10px;
+  }
+
   .hourly {
     overflow-x: auto;
+    justify-content: flex-start;
+    gap: 14px;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .hourly::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .hourly::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+  }
+
+  .hourly__item {
+    flex-shrink: 0;
   }
 }
